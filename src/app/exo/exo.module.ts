@@ -4,14 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ExoRoutingModule } from './exo-routing.module';
 import { ExoComponent } from './exo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputValidationComponent } from './input-validation/input-validation.component';
-import { ChronoComponent } from './chrono/chrono.component';
+import { InputValidationComponent } from './components/input-validation/input-validation.component';
+import { ChronoComponent } from './components/chrono/chrono.component';
 import { SharedModule } from '../shared/shared.module';
-import { ProduitComponent } from './produit/produit.component';
+import { ProduitComponent } from './components/produit/produit.component';
 import { ExoParentComponent } from './exo-parent/exo-parent.component';
-import { ExoEnfant1Component } from './exo-enfant1/exo-enfant1.component';
-import { ExoEnfant2Component } from './exo-parent/exo-enfant2/exo-enfant2.component';
-import { FormProduitComponent } from './form-produit/form-produit.component';
+import { ExoEnfantComponent } from './exo-parent/exo-enfant/exo-enfant.component';
+import { FormProduitComponent } from './components/form-produit/form-produit.component';
 
 
 @NgModule({
@@ -21,8 +20,7 @@ import { FormProduitComponent } from './form-produit/form-produit.component';
     ChronoComponent,
     ProduitComponent,
     ExoParentComponent,
-    ExoEnfant1Component,
-    ExoEnfant2Component,
+    ExoEnfantComponent,
     FormProduitComponent
   ],
   imports: [
