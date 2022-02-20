@@ -1,0 +1,7 @@
+form.ng-untouched{
+    background-color: lightgreen;
+}
+
+.ng-dirty{
+    border: 2px solid blue;
+}

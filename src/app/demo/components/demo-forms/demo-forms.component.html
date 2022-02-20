@@ -1,0 +1,13 @@
+<h3>Les formulaires</h3>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="input-nom">Nom :</label>
+        <input type="text" name="" id="input-nom" formControlName="nom">
+    </div>
+    <div>
+        <label for="input-age">Age : </label>
+        <input type="number" name="" id="input-age" formControlName="age">
+    </div>
+    <button type="submit">Envoyer</button>
+</form>

@@ -1,0 +1,9 @@
+<h1>Validation d'un input</h1>
+
+<input type="text"  [min]="min" [max]="max" [(ngModel)]="nom">
+
+<button (click)="validation()">Valider</button>
+
+<p>Nombre de tentative de validation : {{ nbrTentative  }}  </p>
+<p>Nombre de nom validé : {{ nbrValidation }} </p>
+<p>Dernier nom validé : {{ nomValide }}</p>

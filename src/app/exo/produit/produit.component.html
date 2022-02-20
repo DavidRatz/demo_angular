@@ -1,0 +1,41 @@
+<h3>Liste des produits en vente</h3>
+
+<label for="tri">Trier par : </label>
+<select id="tri" [(ngModel)]="tri" (change)="triProduit()">
+    <option value="">Selectionner</option>
+    <option value="prix">prix</option>
+    <option value="stock">stock</option>
+    <option value="marque">marque</option>
+</select>
+<label for="hideEn_vente">Cacher si pas en vente</label>
+<input [ngModel]="hide" type="checkbox" name="" id="hideEn_vente" (change)="toggleHide()">
+<table>
+    <tr>
+        <th>Marque</th>
+        <th>Modele</th>
+        <th>Stock</th>
+        <th>Prix</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let produit of tabProduit; let i = index" [ngClass]="{en_vente: !produit.en_vente}">
+        <ng-container *ngIf="produit.en_vente || !hide">
+            <td>{{ produit.marque }}</td>
+            <td>{{ produit.modele }}</td>
+            <td>{{ produit.stock }}</td>
+            <ng-container *ngIf="produit.stock == 0">
+                <td>Indisponible</td>
+            </ng-container>
+            <ng-container *ngIf="produit.stock > 0 && produit.stock < 5">
+                <td [ngStyle]="{color: 'orange'}">{{ produit.prix }}</td>
+            </ng-container>
+            <ng-container *ngIf="produit.stock >= 5">
+                <td [ngStyle]="{color: 'green'}">{{ produit.prix }}</td>
+            </ng-container>
+            
+            
+            <td (click)="supprimerProduit(i)"><button>supprimer</button></td>
+            <td (click)="toggleEnVente(i)"><button>{{ produit.en_vente ? "Retirer de la vente" : "Mettre en vente" }}</button></td>
+        </ng-container>
+    </tr>
+</table>

@@ -1,0 +1,15 @@
+<h2>Chrono</h2>
+
+<div id="chrono">
+    <div id="display">
+        {{ chrono | chronoFormat:format }}
+    </div>
+    <button [disabled]="isPlayBtnDisabled" (click)="play()">play</button>
+    <button [disabled]="isPauseBtnDisabled" disabled (click)="pause()">pause</button>
+    <button [disabled]="isResetBtnDisabled" (click)="reset()">reset</button>
+    <select name="" [(ngModel)]="format" (change)="refreshFormat()">
+        <option value="simple">simple</option>
+        <option value="complex">complex</option>
+        <option value="full">full</option>
+    </select>
+</div>

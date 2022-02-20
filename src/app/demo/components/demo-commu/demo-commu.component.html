@@ -1,0 +1,7 @@
+<div id="cadre_parent">
+    <h3 [ngStyle]="{color: colorParent}">Les communications parents/enfants</h3>
+
+    <input type="text" [(ngModel)]="info">
+
+    <app-demo-commu-enfant [info-get]="info" (change-color)="onColorChange($event)"></app-demo-commu-enfant>
+</div>

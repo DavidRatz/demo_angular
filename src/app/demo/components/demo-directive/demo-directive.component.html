@@ -1,0 +1,90 @@
+<h3>Les directives</h3>
+
+<h4>Component directive</h4>
+
+<h5>ngStyle</h5>
+
+<div>
+    <p [ngStyle]="{ color:color, 'background-color':bgColor}">test</p>
+</div>
+<div>
+    <label for="color">Color</label><br>
+    <input type="radio" name="color" id="" value="black" [(ngModel)]="color">black
+    <input type="radio" name="color" id="" value="white" [(ngModel)]="color">white
+    <input type="radio" name="color" id="" value="red" [(ngModel)]="color">red
+</div>
+
+<div>
+    <label for="bg-color">Background-color</label><br>
+    <input type="radio" name="bg-color" id="" value="red" [(ngModel)]="bgColor">red
+    <input type="radio" name="bg-color" id="" value="blue" [(ngModel)]="bgColor">blue
+</div>
+
+<h5>ngClass</h5>
+
+<div>
+    <p [ngClass]="{'negative': numberInput < 0, 'too-big': numberInput < -2}">test</p>
+</div>
+
+<input type="number" name="" id=""  [(ngModel)]="numberInput">
+
+<h5>ngModel</h5>
+
+<h4>Structural directives</h4>
+
+<h5>ngIf</h5>
+
+<button (click)="toggleDisplay()">{{ displayed ? "cacher" : "afficher" }}</button>
+
+<div *ngIf="displayed;else div_container">
+    <p>secret</p>
+</div>
+
+<div [hidden]="!displayed">
+    <p>secret</p>
+</div>
+
+<p>ttttttttttttttttttttttttttttttttt</p>
+
+<ng-template #div_container>
+    <div>
+        <p>sinon</p>
+    </div>
+</ng-template>
+
+<h5>ngFor</h5>
+
+<!-- <ul>
+    <li *ngFor="let fruit of tabFruit; let i = index">{{ i }} = {{fruit}}</li>
+</ul> -->
+
+<ul>
+    <ng-container *ngFor="let fruit of tabFruit; let i = index">
+        <li *ngIf="fruit.charAt(0) != 'p'">{{ i }} = {{fruit}}</li>
+    </ng-container>
+    
+</ul>
+
+<h5>ngSwitch</h5>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'black'">La couleur est noire</div>
+    <div *ngSwitchCase="'white'">La couleur est blanche</div>
+    <div *ngSwitchDefault>C'est ni l'un ni l'autre</div>
+</div>
+
+<h4>Custom directive</h4>
+
+<p>Lorem ipsum <span appHighlight color="red" [black-text]="false">dolor</span> sit amet.</p>
+
+<p style-bg-green>Lorem, ipsum dolor.</p>
+
+<p style-bg-green (color-swapped)="onColorSwapped($event)"></p>
+
+
+<p>{{cptChild}}</p>
+<div appChildText childText="salut" (cpt-child)="getNumberChild()">
+    
+</div>
+<div appChildText childText="salut" (cpt-child)="getNumberChild()">
+</div>

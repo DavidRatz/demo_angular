@@ -1,0 +1,24 @@
+<h2>Le binding</h2>
+
+<h3>One-way binding</h3>
+
+<p>Bonjour {{ nomUser }}</p>
+<p>Bonjour {{ "luc" + "Dubois" }}</p>
+<p>Bonjour {{ nomUser + " Ratz"}}</p>
+
+<h3>One-way binding d'attribut</h3>
+
+<p [class]="color" (mouseenter)="saveColor()">Le texte est en {{ color }}</p>
+
+<h3>Two-way binding</h3>
+
+<select [(ngModel)]="color">
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+</select>
+
+<h3>Binding d'événement</h3>
+
+<button (click)="onClick($event)">Click me</button>
+
+<button (click)="alertThenRedirect()">alert then redirect</button>

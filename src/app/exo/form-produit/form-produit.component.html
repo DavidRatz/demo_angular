@@ -1,0 +1,15 @@
+<h3>Formulaire de produit</h3>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="input-produit">Produit :</label>
+        <input type="text" name="" id="input-produit" formControlName="produit"> 
+    </div>
+    <div>
+        <label for="input-prix">Prix : </label>
+        <input type="text" name="" id="input-prix" formControlName="prix">
+    </div>
+
+    <button type="submit">Envoyer</button>
+
+</form>
