@@ -8,9 +8,9 @@ import { InputValidationComponent } from './components/input-validation/input-va
 import { ChronoComponent } from './components/chrono/chrono.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProduitComponent } from './components/produit/produit.component';
-import { ExoParentComponent } from './exo-parent/exo-parent.component';
-import { ExoEnfantComponent } from './exo-parent/exo-enfant/exo-enfant.component';
 import { FormProduitComponent } from './components/form-produit/form-produit.component';
+import { ExoParentComponent } from './components/exo-parent/exo-parent.component';
+import { ExoEnfantComponent } from './components/exo-parent/exo-enfant/exo-enfant.component';
 
 
 @NgModule({

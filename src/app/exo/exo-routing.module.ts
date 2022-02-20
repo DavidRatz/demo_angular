@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChronoComponent } from './components/chrono/chrono.component';
-import { ExoParentComponent } from './exo-parent/exo-parent.component';
+import { ExoParentComponent } from './components/exo-parent/exo-parent.component';
 import { ExoComponent } from './exo.component';
 import { FormProduitComponent } from './components/form-produit/form-produit.component';
 import { InputValidationComponent } from './components/input-validation/input-validation.component';
