@@ -1,0 +1,10 @@
+<h2>Menu</h2>
+
+<ng-container *ngFor="let item of listeProduits">
+    <p>{{ item.marque }} - {{ item.modele }}</p>
+    <p>{{ item.prix }} €</p>
+    <p>{{ item.stock }} restant(s)</p>
+    <p>en vente : {{ item.en_vente }}</p>
+    <button type="button" [disabled]="!item.en_vente" (click)="addProduit(item)">Ajouter</button>
+    <hr>
+</ng-container>

@@ -11,6 +11,10 @@ import { ProduitComponent } from './components/produit/produit.component';
 import { FormProduitComponent } from './components/form-produit/form-produit.component';
 import { ExoParentComponent } from './components/exo-parent/exo-parent.component';
 import { ExoEnfantComponent } from './components/exo-parent/exo-enfant/exo-enfant.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { PanierComponent } from './components/panier/panier.component';
+import { GestionObjectifComponent } from './components/gestion-objectif/gestion-objectif.component';
+import { ColorchangeComponent } from './components/colorchange/colorchange.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { ExoEnfantComponent } from './components/exo-parent/exo-enfant/exo-enfan
     ProduitComponent,
     ExoParentComponent,
     ExoEnfantComponent,
-    FormProduitComponent
+    FormProduitComponent,
+    MenuComponent,
+    PanierComponent,
+    GestionObjectifComponent,
+    ColorchangeComponent
   ],
   imports: [
     CommonModule,

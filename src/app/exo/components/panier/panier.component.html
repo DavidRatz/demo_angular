@@ -1,0 +1,11 @@
+<h2>Panier</h2>
+
+<ng-container *ngFor="let item of listPanier">
+    <p>{{ item.marque }} - {{ item.modele }}</p>
+    <p>{{ item.prix }} €</p>
+    <p>{{ item.stock }} restant(s)</p>
+    <p>en vente : {{ item.en_vente }}</p>
+    <p>Quantité : {{ item.quantite }}</p>
+    <button type="button" (click)="deleteProduit(item)">Supprimer</button>
+    <hr>
+</ng-container>

@@ -1,0 +1,10 @@
+<h3>Les produits</h3>
+
+<div class="produit-container">
+    <div id="produit-form-container" *ngIf="isConnected()">
+        <app-insert-produit-form (produit-submitted)="onSubmitted($event)"></app-insert-produit-form>
+    </div>
+    <div id="produit-list-container">
+        <app-list-produits [produits]="listProduit"></app-list-produits>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="plat">
+    <h3>Details d'un plat d'id: {{ plat.id }}</h3>
+    <dl>
+        <dt>Nom</dt>
+        <dd>{{ plat.nom }}</dd>
+        <dt>Type</dt>
+        <dd>{{ plat.type }}</dd>
+        <dt>Prix</dt>
+        <dd>{{ plat.prix | currency: 'EUR' }}</dd>
+    </dl>
+</div>

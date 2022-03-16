@@ -1,12 +1,22 @@
 <h2>Exo</h2>
 
+<h3 [ngStyle]="{'color': color}">Objectif actuel : {{ objectif }}</h3>
+
 <div>
     <a routerLink="./input-validation">input validation</a><br>
     <a routerLink="./chrono">Chrono</a><br>
     <a routerLink="./produit">Produit</a><br>
     <a routerLink="./exo-parent">Parent / enfant</a><br>
     <a routerLink="./form-produit">Formulaire de produit</a><br>
+    <a routerLink="./menu">Menu</a><br>
+    <a routerLink="./panier">Panier</a><br>
+    <a routerLink="./objectif">Objectif</a><br>
+    <a routerLink="./color">Changer de couleur</a><br>
 </div>
+
+<ng-container *ngFor="let item of listColor">
+    {{ item }}
+</ng-container>
 
 
 <router-outlet></router-outlet>

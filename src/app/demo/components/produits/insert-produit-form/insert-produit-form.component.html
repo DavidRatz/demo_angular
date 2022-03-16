@@ -1,0 +1,44 @@
+<h4>Formulaire d'insertion de produits</h4>
+
+<form [formGroup]="produitInsertForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="produit-marque">Marque <span *ngIf="produitInsertForm.controls['marque'].errors?.['required']">*</span></label><br>
+        <input type="text" id="produit-marque" formControlName="marque" [title]="produitInsertForm.controls['marque'].errors?.['required'] ? 'requis' : ''" >
+        
+    </div>
+    <div>
+        <label for="produit-modele">Modele</label><br>
+        <input type="text" id="produit-modele" formControlName="modele">
+    </div>
+    <div>
+        <label for="produit-prix">Prix</label><br>
+        <input type="number" id="produit-prix" formControlName="prix">
+        <p *ngIf="produitInsertForm.controls['prix'].errors?.['isMultiple']" style="color:red">
+            {{ produitInsertForm.controls['prix'].errors?.['isMultiple'].message }}
+        </p>
+    </div>  
+
+    <div>
+        <label for="produit-stock">Stock</label><br>
+        <input type="number" [title]="produitInsertForm.controls['stock'].errors?.['pair'] ? produitInsertForm.controls['stock'].errors?.['pair'].message : ''" id="produit-stock" formControlName="stock">
+        <!-- <p *ngIf="produitInsertForm.controls['stock'].errors?.['pair']">
+            {{ produitInsertForm.controls['stock'].errors?.['pair'].message }}
+        </p> -->
+    </div>
+
+    <div>
+        <input type="checkbox" id="produit-envente"  formControlName="en_vente">
+        <label for="produit-envente"> en vente </label>
+    </div>
+
+    <button type="submit">insérer</button>
+
+    <p *ngIf="produitInsertForm.errors?.['prixDoubleStock']" style="color:red">
+        {{ produitInsertForm.errors?.['prixDoubleStock'].message }}
+    </p>
+    <p *ngIf="produitInsertForm.errors?.['sameFirst2Letters']" style="color:red">
+        {{ produitInsertForm.errors?.['sameFirst2Letters'].message }}
+    </p>
+
+</form>

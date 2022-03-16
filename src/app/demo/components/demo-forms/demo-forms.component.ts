@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-demo-forms',
@@ -9,8 +9,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class DemoFormsComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
-    'nom': new FormControl(),
-    'age': new FormControl()
+    'nom': new FormControl(undefined, Validators.required),
+    'age': new FormControl(undefined, [Validators.min(0), Validators.max(100)]),
+    'bouffe-pref': new FormControl("gateau")
   });
   
 
@@ -20,8 +21,11 @@ export class DemoFormsComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.form);
-    
+    if(this.form.valid)
+      console.log(this.form);
+    else
+      console.log("form invalid");
+      
   }
 
 }

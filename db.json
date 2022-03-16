@@ -1,0 +1,58 @@
+{
+  "plats": [
+    {
+      "id": 1,
+      "nom": "pate",
+      "type": "plat",
+      "prix": 8
+    },
+    {
+      "id": 2,
+      "nom": "pizza",
+      "type": "plat",
+      "prix": 10
+    },
+    {
+      "id": 3,
+      "nom": "croquettes",
+      "type": "entree",
+      "prix": 6
+    },
+    {
+      "id": 4,
+      "nom": "glace",
+      "type": "dessert",
+      "prix": 4
+    },
+    {
+      "id": 11,
+      "nom": "trucmuche",
+      "type": "dessert",
+      "prix": 600
+    },
+    {
+      "id": "12",
+      "nom": "test",
+      "type": "dessert",
+      "prix": "25"
+    },
+    {
+      "id": "15",
+      "nom": "test",
+      "type": "dessert",
+      "prix": "25"
+    },
+    {
+      "id": "5",
+      "nom": "pizza",
+      "type": "plat",
+      "prix": "25"
+    },
+    {
+      "id": "140",
+      "nom": "moi",
+      "type": "lol",
+      "prix": "4"
+    }
+  ]
+}

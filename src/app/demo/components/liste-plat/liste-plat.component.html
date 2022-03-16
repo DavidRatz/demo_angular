@@ -1,0 +1,36 @@
+<h3>Liste des plats</h3>
+
+<div id="ajoutPlat">
+    <h3>Ajouter un plat</h3>
+    <form (ngSubmit)="onSubmit()" [formGroup]="platForm">
+        <div id="id">
+            <label for="id">id : </label>
+            <input type="text" id="id" formControlName="id">
+        </div>
+        <div id="nom">
+            <label for="nom">nom : </label>
+            <input type="text" id="nom" formControlName="nom">
+        </div>
+        <div id="type">
+            <label for="type">type : </label>
+            <input type="text" id="type" formControlName="type">
+        </div>
+        <div id="prix">
+            <label for="prix">prix : </label>
+            <input type="text" id="prix" formControlName="prix">
+        </div>
+
+        <div><button type="submit">Ajouter</button></div>
+    </form>
+</div>
+
+<ng-container *ngFor="let item of listPlat">
+    <p>id: {{ item.id }}</p>
+    <p>nom : {{ item.nom }}</p>
+    <p>type : {{ item.type }}</p>
+    <p>prix : {{ item.prix }}</p>
+    <hr>
+    <button (click)="onDetails(item)">Details</button>
+</ng-container>
+
+

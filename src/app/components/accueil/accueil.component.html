@@ -1,1 +1,13 @@
 <h1>Bonjour</h1>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="connexionForm">
+    <div>
+        <label for="connect-user">username</label>
+        <input type="text" id="connect-user" formControlName="username" >
+    </div>
+    <div>
+        <label for="connect-pass">password</label>
+        <input type="text" id="connect-pass" formControlName="password">
+    </div>
+    <button type="submit">envoyer</button>
+</form>

@@ -1,0 +1,12 @@
+.produit-list-item {
+    display: flex;
+    background-color: rgb(112, 93, 63); 
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;  
+}
+
+.produit-list-item > div {
+    width: 50%;
+    text-align: center;
+}

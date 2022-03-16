@@ -15,6 +15,13 @@ import { DemoCommuComponent } from './components/demo-commu/demo-commu.component
 import { DemoCommuEnfantComponent } from './components/demo-commu-enfant/demo-commu-enfant.component';
 import { ChildTextDirective } from './directives/child-text.directive';
 import { DemoFormsComponent } from './components/demo-forms/demo-forms.component';
+import { ProduitsComponent } from './components/produits/produits.component';
+import { InsertProduitFormComponent } from './components/produits/insert-produit-form/insert-produit-form.component';
+import { ListProduitsComponent } from './components/produits/list-produits/list-produits.component';
+import { ListProduitsItemComponent } from './components/produits/list-produits/list-produits-item/list-produits-item.component';
+import { ObsDemoComponent } from './components/obs-demo/obs-demo.component';
+import { ListePlatComponent } from './components/liste-plat/liste-plat.component';
+import { PlatComponent } from './components/plat/plat.component';
 
 
 @NgModule({
@@ -29,14 +36,21 @@ import { DemoFormsComponent } from './components/demo-forms/demo-forms.component
     DemoCommuComponent,
     DemoCommuEnfantComponent,
     ChildTextDirective,
-    DemoFormsComponent
+    DemoFormsComponent,
+    ProduitsComponent,
+    InsertProduitFormComponent,
+    ListProduitsComponent,
+    ListProduitsItemComponent,
+    ObsDemoComponent,
+    ListePlatComponent,
+    PlatComponent
   ],
   imports: [
     CommonModule,
     DemoRoutingModule,
     FormsModule,
     SharedModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ]
 })
 export class DemoModule { }
