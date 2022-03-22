@@ -22,6 +22,7 @@ import { ListProduitsItemComponent } from './components/produits/list-produits/l
 import { ObsDemoComponent } from './components/obs-demo/obs-demo.component';
 import { ListePlatComponent } from './components/liste-plat/liste-plat.component';
 import { PlatComponent } from './components/plat/plat.component';
+import { PlatAsyncComponent } from './components/plat-async/plat-async.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PlatComponent } from './components/plat/plat.component';
     ListProduitsItemComponent,
     ObsDemoComponent,
     ListePlatComponent,
-    PlatComponent
+    PlatComponent,
+    PlatAsyncComponent
   ],
   imports: [
     CommonModule,

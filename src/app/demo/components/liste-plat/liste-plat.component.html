@@ -24,7 +24,13 @@
     </form>
 </div>
 
-<ng-container *ngFor="let item of listPlat">
+<div *ngIf="listError">
+    <ng-container *ngFor="let item of listError">
+        {{ item }}
+    </ng-container>
+</div>
+
+<ng-container *ngFor="let item of $listPlat | async">
     <p>id: {{ item.id }}</p>
     <p>nom : {{ item.nom }}</p>
     <p>type : {{ item.type }}</p>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { catchError, Observable, of } from 'rxjs';
 import { Plat } from 'src/app/models/plat.model';
 import { PlatService } from 'src/app/services/plat.service';
 
@@ -19,6 +20,10 @@ export class ListePlatComponent implements OnInit {
     'type': new FormControl(),
     'prix': new FormControl()
   })
+
+  listError: string[] = []
+
+  $listPlat!: Observable<Plat[]>;
 
   constructor(private service: PlatService, private router: Router) {
     this.getPlats();
@@ -38,10 +43,16 @@ export class ListePlatComponent implements OnInit {
   }
 
   getPlats(){
-    this.service.getPlats().subscribe({
-      next: plats => this.listPlat = plats,
-      error: err => alert("echec")
-    });
+    this.$listPlat = this.service.getPlats().pipe(
+      catchError((err) => {        
+        this.listError.push(err.message);
+        return of();
+        })
+    );
+    // this.service.getPlats().subscribe({
+    //   next: plats => this.listPlat = plats,
+    //   error: err => alert("echec")
+    // });
   }
 
   onDetails(plat : Plat){

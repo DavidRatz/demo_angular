@@ -6,16 +6,22 @@ import { User } from '../models/user.model';
 })
 export class ConnexionService {
 
-  private _isConnected = false;
   public get isConnected() {
-    return this._isConnected;
+    //return localStorage.getItem('user') ? true : false;
+    return sessionStorage.getItem('user') ? true : false;
   }
 
   constructor() { }
 
+  getConnected(){
+    const json_user = sessionStorage.getItem('user');
+    return json_user ? JSON.parse(json_user)['username'] : null;
+  }
+
   public connect(credentials: User): boolean{
     if(credentials.username === "user" && credentials.password === "pass"){
-      this._isConnected = true;
+      //localStorage.setItem('user', JSON.stringify({username:'user'}))
+      sessionStorage.setItem('user', JSON.stringify({username:'user'}))
       return true;
     }
     else
@@ -24,7 +30,8 @@ export class ConnexionService {
 
   public disconnect(): boolean{
     if(this.isConnected){
-      this._isConnected = false;
+      //localStorage.removeItem('user');
+      sessionStorage.removeItem('user');
       return true;
     }
     else

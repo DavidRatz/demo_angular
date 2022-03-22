@@ -10,6 +10,11 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { GestionObjectifComponent } from './components/gestion-objectif/gestion-objectif.component';
 import { ColorchangeComponent } from './components/colorchange/colorchange.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
+import { PairComponent } from './components/input-number/pair/pair.component';
+import { ImpairComponent } from './components/input-number/impair/impair.component';
+import { EvenGuard } from '../guards/even.guard';
+import { OddGuard } from '../guards/odd.guard';
 
 const routes: Routes = [
   { path: '', component:ExoComponent, 
@@ -23,6 +28,9 @@ const routes: Routes = [
       { path: 'panier', component:PanierComponent},
       { path: 'objectif', component:GestionObjectifComponent},
       { path: 'color', component:ColorchangeComponent},
+      { path: 'input-number', component:InputNumberComponent},
+      { path: 'input-number/pair/:number', component:PairComponent, canActivate: [EvenGuard]},
+      { path: 'input-number/impair/:number', component:ImpairComponent, canActivate: [OddGuard]},
     ]
   }
 ];

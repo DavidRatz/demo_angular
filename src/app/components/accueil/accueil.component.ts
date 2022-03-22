@@ -28,4 +28,12 @@ export class AccueilComponent implements OnInit {
       alert("Username/password invalide(s)");
   }
 
+  isConnected(){
+    return this.service.isConnected;
+  }
+
+  getUsername(){
+    return this.service.getConnected();
+  }
+
 }

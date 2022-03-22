@@ -10,6 +10,8 @@ import { ListePlatComponent } from './components/liste-plat/liste-plat.component
 import { ProduitsComponent } from './components/produits/produits.component';
 import { DemoComponent } from './demo.component';
 import { PlatComponent } from './components/plat/plat.component';
+import { ConnexionGuard } from '../guards/connexion.guard';
+import { PlatAsyncComponent } from './components/plat-async/plat-async.component';
 
 const routes: Routes = [
   { path: '', component:DemoComponent, 
@@ -21,8 +23,9 @@ const routes: Routes = [
       { path: 'form', component:DemoFormsComponent},
       { path: 'produits', component: ProduitsComponent },
       { path: 'obs', component: ObsDemoComponent },
-      { path: 'liste-plat', component: ListePlatComponent },
+      { path: 'liste-plat', component: ListePlatComponent, canActivate: [ConnexionGuard] },
       { path: 'plat/:id', component: PlatComponent },
+      { path: 'plat-async/:id', component: PlatAsyncComponent },
     ]
   }
 ];

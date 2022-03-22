@@ -1,6 +1,8 @@
 <h1>Bonjour</h1>
-
-<form (ngSubmit)="onSubmit()" [formGroup]="connexionForm">
+<ng-template #welcomeMessage>
+    <p>Bonjour {{ getUsername() }}</p>
+</ng-template>
+<form (ngSubmit)="onSubmit()" [formGroup]="connexionForm" *ngIf="!isConnected(); else welcomeMessage">
     <div>
         <label for="connect-user">username</label>
         <input type="text" id="connect-user" formControlName="username" >

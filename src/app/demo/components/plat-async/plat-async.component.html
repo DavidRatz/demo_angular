@@ -3,7 +3,8 @@
         <p>Loading....</p>
     </div>
 </ng-template>
-<div *ngIf="plat; else loading">
+
+<div *ngIf="$plat | async as plat; else loading">
     <h3>Details d'un plat d'id: {{ plat.id }}</h3>
     <dl>
         <dt>Nom</dt>

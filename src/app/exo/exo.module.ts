@@ -15,6 +15,9 @@ import { MenuComponent } from './components/menu/menu.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { GestionObjectifComponent } from './components/gestion-objectif/gestion-objectif.component';
 import { ColorchangeComponent } from './components/colorchange/colorchange.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
+import { PairComponent } from './components/input-number/pair/pair.component';
+import { ImpairComponent } from './components/input-number/impair/impair.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { ColorchangeComponent } from './components/colorchange/colorchange.compo
     MenuComponent,
     PanierComponent,
     GestionObjectifComponent,
-    ColorchangeComponent
+    ColorchangeComponent,
+    InputNumberComponent,
+    PairComponent,
+    ImpairComponent
   ],
   imports: [
     CommonModule,
